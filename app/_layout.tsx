@@ -5,6 +5,7 @@ import {
   ThemeProvider,
 } from '@react-navigation/native'
 import { useFonts } from 'expo-font'
+import { LinearGradient } from 'expo-linear-gradient'
 import { SplashScreen, Stack } from 'expo-router'
 import { useEffect } from 'react'
 import { useColorScheme } from 'react-native'
@@ -14,6 +15,7 @@ export {
   ErrorBoundary,
 } from 'expo-router'
 
+// eslint-disable-next-line
 export const unstable_settings = {
   // Ensure that reloading on `/modal` keeps a back button present.
   initialRouteName: '(tabs)',

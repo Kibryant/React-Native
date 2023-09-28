@@ -1,10 +1,16 @@
-// Learn more https://docs.expo.io/guides/customizing-metro
-const { getDefaultConfig } = require('expo/metro-config');
+/* eslint-disable*/
+const path = require('path')
+const { getDefaultConfig } = require('expo/metro-config')
 
-/** @type {import('expo/metro-config').MetroConfig} */
+// 1. Enable CSS for Expo.
 const config = getDefaultConfig(__dirname, {
-  // [Web-only]: Enables CSS support in Metro.
   isCSSEnabled: true,
-});
+})
 
-module.exports = config;
+// 2. Enable NativeWind
+const { withNativeWind } = require('nativewind/metro')
+module.exports = withNativeWind(config, {
+  // 3. Set `input` to your CSS file with the Tailwind at-rules
+  input: 'global.css',
+})
+module.exports = config
